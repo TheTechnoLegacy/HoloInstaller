@@ -29,7 +29,7 @@ public class InstallAppProgress extends Activity {
 
     private View headerLine, headerProgress;
     private TextView status, error;
-    private View statusCheck;
+    private ImageView statusCheck;
     private View buttons;
     private String pkg, apkPath;
     private boolean started;
@@ -63,7 +63,7 @@ public class InstallAppProgress extends Activity {
         headerLine.setVisibility(View.INVISIBLE);
         headerProgress.setVisibility(View.VISIBLE);
         status = (TextView) findViewById(R.id.center_text);
-        statusCheck = findViewById(R.id.status_check);
+        statusCheck = (ImageView) findViewById(R.id.status_check);
         error = (TextView) findViewById(R.id.error_text);
         buttons = findViewById(R.id.button_bar);
 
@@ -140,6 +140,8 @@ public class InstallAppProgress extends Activity {
             findViewById(R.id.launch_button).setEnabled(
                     getPackageManager().getLaunchIntentForPackage(pkg) != null);
         } else {
+            statusCheck.setImageResource(R.drawable.ic_fail);
+            statusCheck.setVisibility(View.VISIBLE);
             status.setText(R.string.install_failed);
             findViewById(R.id.launch_button).setVisibility(View.GONE);
             if (msg != null) { error.setText(msg); error.setVisibility(View.VISIBLE); }

@@ -3,7 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.techno.installer"
 	android:versionCode="18"
-	android:versionName="4.3">
+	android:versionName="1.0">
 
 	<uses-sdk
 		android:minSdkVersion="21"
@@ -13,8 +13,7 @@
 		android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
 
 	<application
-		android:icon="@drawable/ic_launcher"
-		android:label="TechnoInstaller"
+		android:label="HoloInstaller"
 		android:theme="@android:style/Theme.Holo.NoActionBar">
 
 		<activity
